@@ -6,9 +6,7 @@ import {
   CheckSquare, 
   BarChart3, 
   Sparkles, 
-  ShieldCheck, 
   LogOut, 
-  User, 
   Layers 
 } from 'lucide-react';
 
@@ -23,10 +21,6 @@ export default function Navbar({ activeTab, setActiveTab }) {
     { id: 'roadmap', label: 'My Roadmap', icon: MapPin },
     { id: 'ai-assistant', label: 'AI Career Assistant', icon: Sparkles, badge: 'RAG' },
   ];
-
-  if (user?.role === 'ROLE_ADMIN') {
-    navItems.push({ id: 'admin', label: 'Admin Console', icon: ShieldCheck });
-  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
@@ -84,7 +78,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
                 {user?.fullName || user?.username}
               </span>
               <span className="text-[11px] font-medium text-indigo-600 capitalize">
-                {user?.role === 'ROLE_ADMIN' ? 'Staff Administrator' : 'Enrolled Student'}
+                Student
               </span>
             </div>
 

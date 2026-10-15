@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { Compass, Lock, User, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Compass, Lock, User, ArrowRight } from 'lucide-react';
 
 export default function LoginPage({ onSwitchToRegister }) {
   const { login } = useAuth();
@@ -102,27 +102,18 @@ export default function LoginPage({ onSwitchToRegister }) {
             </button>
           </form>
 
-          {/* Quick Demo Logins */}
+          {/* Quick Demo Login */}
           <div className="mt-6 pt-5 border-t border-slate-100">
             <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 text-center mb-2.5">
-              Instant Demo Access
+              Quick Demo Access
             </span>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => fillCredentials('student', 'password123')}
-                className="p-2 text-xs font-bold rounded-lg bg-indigo-50 text-indigo-700 hover:bg-indigo-100 text-center transition-colors"
-              >
-                Alex (Student)
-              </button>
-              <button
-                type="button"
-                onClick={() => fillCredentials('admin', 'password123')}
-                className="p-2 text-xs font-bold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 text-center transition-colors"
-              >
-                Staff (Admin)
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={() => fillCredentials('student', 'password123')}
+              className="w-full p-2.5 text-xs font-bold rounded-xl bg-indigo-50 text-indigo-700 hover:bg-indigo-100 text-center transition-colors flex items-center justify-center gap-2"
+            >
+              <span>Auto-Fill Student Demo Credentials (Alex)</span>
+            </button>
           </div>
 
           <div className="mt-6 text-center">

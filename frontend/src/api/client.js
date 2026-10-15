@@ -141,47 +141,4 @@ export const api = {
     return res.json();
   },
 
-  // Admin
-  async getAdminStats() {
-    const res = await fetch(`${API_BASE}/admin/stats`, {
-      headers: getAuthHeaders(),
-    });
-    if (!res.ok) throw new Error('Failed to load admin stats');
-    return res.json();
-  },
-
-  async getAdminUsers() {
-    const res = await fetch(`${API_BASE}/admin/users`, {
-      headers: getAuthHeaders(),
-    });
-    if (!res.ok) throw new Error('Failed to load users');
-    return res.json();
-  },
-
-  async getAdminResources() {
-    const res = await fetch(`${API_BASE}/admin/resources`, {
-      headers: getAuthHeaders(),
-    });
-    if (!res.ok) throw new Error('Failed to load resources');
-    return res.json();
-  },
-
-  async createAdminResource(resource) {
-    const res = await fetch(`${API_BASE}/admin/resources`, {
-      method: 'POST',
-      headers: getAuthHeaders(),
-      body: JSON.stringify(resource),
-    });
-    if (!res.ok) throw new Error('Failed to create resource');
-    return res.json();
-  },
-
-  async deleteAdminResource(id) {
-    const res = await fetch(`${API_BASE}/admin/resources/${id}`, {
-      method: 'DELETE',
-      headers: getAuthHeaders(),
-    });
-    if (!res.ok) throw new Error('Failed to delete resource');
-    return res.json();
-  },
 };

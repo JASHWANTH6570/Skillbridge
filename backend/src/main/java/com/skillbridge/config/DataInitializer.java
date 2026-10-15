@@ -183,14 +183,7 @@ public class DataInitializer implements CommandLineRunner {
         ));
 
         // 6. Create Users
-        User adminUser = new User(
-                "admin",
-                "admin@skillbridge.edu",
-                passwordEncoder.encode("password123"),
-                "SkillBridge Administrator",
-                RoleType.ROLE_ADMIN
-        );
-        userRepository.save(adminUser);
+
 
         User studentUser = new User(
                 "student",

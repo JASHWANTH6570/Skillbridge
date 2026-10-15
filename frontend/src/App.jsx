@@ -9,7 +9,6 @@ import SkillAssessmentPage from './pages/SkillAssessmentPage';
 import SkillGapAnalysisPage from './pages/SkillGapAnalysisPage';
 import RoadmapViewPage from './pages/RoadmapViewPage';
 import AiCareerAssistantPage from './pages/AiCareerAssistantPage';
-import AdminConsolePage from './pages/AdminConsolePage';
 
 export default function App() {
   const { user, loading } = useAuth();
@@ -69,10 +68,6 @@ export default function App() {
 
         {activeTab === 'ai-assistant' && (
           <AiCareerAssistantPage />
-        )}
-
-        {activeTab === 'admin' && (
-          <AdminConsolePage />
         )}
       </main>
 
