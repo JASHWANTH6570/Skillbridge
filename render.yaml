@@ -13,26 +13,9 @@ services:
     envVars:
       - key: PORT
         value: 8080
-      - key: SPRING_PROFILES_ACTIVE
-        value: dev
-
-  # -------------------------------------------------------------
-  # 2. SkillBridge Frontend Static Site (React 18 + Vite SPA)
-  # -------------------------------------------------------------
-  - type: web
-    name: skillbridge-frontend
-    runtime: static
-    buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/dist
-    plan: free
-    region: oregon
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
-    envVars:
-      - key: VITE_API_BASE_URL
-        fromService:
-          type: web
-          name: skillbridge-backend
-          property: host
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://skillbridg15-anurag-1108.c.aivencloud.com:26802/defaultdb?sslMode=REQUIRED&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      - key: SPRING_DATASOURCE_USERNAME
+        value: avnadmin
+      - key: SPRING_DATASOURCE_PASSWORD
+        sync: false
